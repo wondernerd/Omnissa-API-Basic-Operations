@@ -9,7 +9,7 @@ $Body = @{
     "domain"   = "YOURDOMAIN"} | ConvertTo-Json
     
 # Request the login token
-$LoginResponse = Invoke-RestMethod –Uri "$BaseUrl/login" -Method Post -Body $Body -ContentType "application/json"
+$LoginResponse = Invoke-RestMethod -Uri "$BaseUrl/login" -Method Post -Body $Body -ContentType "application/json"
 
 # Capture the Bearer token (Horizon returns access_token)
 $BearerToken = $LoginResponse.access_token
